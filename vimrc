@@ -1,5 +1,7 @@
 filetype off
 call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 syntax on
 filetype plugin indent on
 set modelines=0
@@ -73,15 +75,22 @@ map <leader>gs :GitStatus<CR>
 map <leader>gc :GitCommit<CR>
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 map <leader>f :set nofu<CR>:set lines=100 columns=400 fu<CR>
 map <leader>id !!date +'\%Y-\%m-\%d \%T \%z'<CR>
 map <leader>pc :ColorHEX<CR>
+imap <Tab> <C-X><C-F>
 
 " Use .as for ActionScript files, not Atlas files.
 au BufNewFile,BufRead *.as set filetype=actionscript
 au BufNewFile,BufRead *.ru set filetype=ruby
 au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead *.md set filetype=mkd
+
+au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 
 " Understand :W as :w
 command! W :w
@@ -92,9 +101,49 @@ set list!
 
 " Status line
 set statusline=%f\ %(%m%r%h\ %)%([%Y]%)%=%<%-20{getcwd()}\ [b%n]\ %l/%L\ ~\ %p%%\ \
-colorscheme ir_black
+set background=dark
+colorscheme solarized
 set t_Co=256
 map <leader>H :%s/:\(\w\+\) =>/\1:<CR>``
 
 " Switch buffer with ,,
 map <leader>, :b#<CR>
+
+" omnicppcomplete options
+map <C-x><C-x><C-T> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q -f " ~/.vim/commontags /usr/include /usr/local/include " ~/moz/obj-ff-dbg/dist/include<CR><CR>
+set tags+=~/.vim/tags/cpp
+
+" --- OmniCppComplete ---
+" -- optional --
+" auto close options when exiting insert mode or moving away
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+set completeopt=menu,menuone
+
+" -- configs --
+let OmniCpp_MayCompleteDot = 1 " autocomplete with .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete with ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete with ::
+let OmniCpp_SelectFirstItem = 2 " select first item (but don't insert)
+let OmniCpp_NamespaceSearch = 2 " search namespaces in this and included files
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype (i.e. parameters) in popup window
+let OmniCpp_LocalSearchDecl = 1 " don't require special style of function opening braces
+
+" -- ctags --
+" map <ctrl>+F12 to generate ctags for current folder:
+map <C-x><C-t> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
+" add current directory's generated tags file to available tags
+set tags+=./tags
+
+" Setup the tab key to do autocompletion
+function! CompleteTab()
+  let prec = strpart( getline('.'), 0, col('.')-1 )
+  if prec =~ '^\s*$' || prec =~ '\s$'
+    return "\<tab>"
+  else
+    return "\<c-x>\<c-o>"
+  endif
+endfunction
+
+inoremap <tab> <c-r>=CompleteTab()<cr>
+
