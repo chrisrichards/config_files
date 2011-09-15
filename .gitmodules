@@ -56,3 +56,6 @@
 	path = vim/bundle/snipmate
 	url = git://github.com/msanders/snipmate.vim.git
 
+[submodule "vim/bundle/OmniCppComplete"]
+	path = vim/bundle/OmniCppComplete
+	url = git://github.com/vim-scripts/OmniCppComplete.git
