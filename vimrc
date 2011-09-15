@@ -136,14 +136,14 @@ map <C-x><C-t> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 set tags+=./tags
 
 " Setup the tab key to do autocompletion
-"function! CompleteTab()
-"  let prec = strpart( getline('.'), 0, col('.')-1 )
-"  if prec =~ '^\s*$' || prec =~ '\s$'
-"    return "\<tab>"
-"  else
-"    return "\<c-x>\<c-o>"
-"  endif
-"endfunction
+function! CompleteTab()
+  let prec = strpart( getline('.'), 0, col('.')-1 )
+  if prec =~ '^\s*$' || prec =~ '\s$'
+    return "\<tab>"
+  else
+    return "\<c-x>\<c-o>"
+  endif
+endfunction
 
 inoremap <tab> <c-r>=CompleteTab()<cr>
 
