@@ -58,6 +58,7 @@ set hlsearch
 syntax on
 
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
+let NERDTreeIgnore = ['\.o$', '\.d$']
 
 " From http://biodegradablegeek.com/2007/12/using-vim-as-a-complete-ruby-on-rails-ide/
 set cf  " Enable error files & error jumping.
