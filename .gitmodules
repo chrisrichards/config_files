@@ -36,21 +36,21 @@
 	url = git://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/vim-coffee-script"]
 	path = vim/bundle/vim-coffee-script
-	url = git://github.com/kchmck/vim-coffee-script.git
+	url = git://github.com/kchmck/vim-coffee-script
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
-	url = git://github.com/plasticboy/vim-markdown.git
+	url = git://github.com/plasticboy/vim-markdown
 [submodule "vim/bundle/vim-ruby-refactoring"]
 	path = vim/bundle/vim-ruby-refactoring
-	url = git://github.com/ecomba/vim-ruby-refactoring.git
+	url = git://github.com/ecomba/vim-ruby-refactoring
 [submodule "vim/bundle/scss-syntax"]
 	path = vim/bundle/scss-syntax
 	url = git://github.com/cakebaker/scss-syntax.vim.git
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/bundle/snipmate"]
-	path = vim/bundle/snipmate
+[submodule "vim/bundle/snipmate.vim"]
+	path = vim/bundle/snipmate.vim
 	url = git://github.com/msanders/snipmate.vim.git
 [submodule "vim/bundle/OmniCppComplete"]
 	path = vim/bundle/OmniCppComplete
