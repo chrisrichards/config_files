@@ -71,9 +71,9 @@ set laststatus=2
 "au FocusLost * :wa
 
 "My own keybindings
-map <leader>gd :GitDiff<CR>
-map <leader>gs :GitStatus<CR>
-map <leader>gc :GitCommit<CR>
+map <leader>gd :Gdiff<CR>
+map <leader>gs :Gstatus<CR>
+map <leader>gc :Gcommit<CR>
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <C-h> <C-w>h
