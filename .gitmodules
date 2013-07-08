@@ -52,9 +52,11 @@
 [submodule "vim/bundle/snipmate.vim"]
 	path = vim/bundle/snipmate.vim
 	url = git://github.com/msanders/snipmate.vim.git
+  ignore = untracked
 [submodule "vim/bundle/OmniCppComplete"]
 	path = vim/bundle/OmniCppComplete
 	url = git://github.com/vim-scripts/OmniCppComplete.git
+  ignore = untracked
 [submodule "vim/bundle/lusty"]
 	path = vim/bundle/lusty
 	url = git://github.com/sjbach/lusty.git
@@ -70,3 +72,4 @@
 [submodule "vim/bundle/csv.vim"]
 	path = vim/bundle/csv.vim
 	url = git@github.com:chrisbra/csv.vim.git
+  ignore = untracked
