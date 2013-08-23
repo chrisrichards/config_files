@@ -67,6 +67,12 @@ set autowrite  " Writes on make/shell commands
 set showmatch
 set laststatus=2
 
+" folding settings
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1
+
 "Save on losing focus
 "au FocusLost * :wa
 
