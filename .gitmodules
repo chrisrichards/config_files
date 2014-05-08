@@ -73,3 +73,12 @@
 	path = vim/bundle/csv.vim
 	url = git@github.com:chrisbra/csv.vim.git
   ignore = untracked
+[submodule "vim/bundle/vim-textobj-user"]
+	path = vim/bundle/vim-textobj-user
+	url = git@github.com:kana/vim-textobj-user.git
+[submodule "vim-textobj-rubyblock"]
+	path = vim-textobj-rubyblock
+	url = git@github.com:nelstrom/vim-textobj-rubyblock.git
+[submodule "vim/bundle/vim-textobj-rubyblock"]
+	path = vim/bundle/vim-textobj-rubyblock
+	url = git@github.com:nelstrom/vim-textobj-rubyblock.git

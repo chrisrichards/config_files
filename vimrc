@@ -76,6 +76,8 @@ set foldlevel=1
 "Save on losing focus
 "au FocusLost * :wa
 
+runtime macros/matchit.vim
+
 "My own keybindings
 map <leader>gd :Gdiff<CR>
 map <leader>gs :Gstatus<CR>
