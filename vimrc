@@ -93,6 +93,13 @@ map <leader>id !!date +'\%Y-\%m-\%d \%T \%z'<CR>
 map <leader>pc :ColorHEX<CR>
 imap <Tab> <C-X><C-F>
 
+map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
+map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
+map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
+
 " Use .as for ActionScript files, not Atlas files.
 au BufNewFile,BufRead *.as set filetype=actionscript
 au BufNewFile,BufRead *.ru set filetype=ruby
